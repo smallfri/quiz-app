@@ -1,3 +1,16 @@
+
+#Installation
+
+This application uses or php artisan serve or
+Laravel sail - https://laravel.com/docs/8.x/sail
+
+Rather than run migrations, there is a copy of the db in the root folder named quizzapp.gz
+
+The Front End is in react, simply because I wanted more practice with React. I know the Laravel purist will have my head for not using vue, but laravel does make it easy to use other JS framworks now :)
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
