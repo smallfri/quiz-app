@@ -2,32 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Question;
+use App\Models\QuestionAnswer;
+use App\Models\Questions;
+use App\Models\QuestionsAnswer;
+use App\Models\UserResults;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Client\Request;
+use Monolog\Logger;
 
 class QuestionController extends Controller
 {
 
     public function index()
     {
-        $question = Question::all();
+        $questions = Questions::has('questionAnswer', '>=', 1)->get();
 
-        return $question->toJson();
+        return $questions->toJson();
     }
 
     public function show($id)
     {
-        $project = Question::with(['answers' => function ($query) {
-            $query->table('user_results')->where('user_id')->where('is_completed', false);
-        }])->find($id);
+       $questionsWithAnswers = Questions::where('id',$id)->with('questionAnswer')->get();
 
-        return $project->toJson();
+        return $questionsWithAnswers->toJson();
     }
 
-    public function markAsCompleted(Project $project)
+    public function handleMarkUserChoice($questionID, $answerID)
     {
-        $project->is_completed = true;
-        $project->update();
 
-        return response()->json('Project updated!');
+        return QuestionAnswer::is_correct($questionID, $answerID);
+
     }
 }

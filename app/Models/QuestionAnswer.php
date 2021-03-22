@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use http\Client\Request;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\Console\Question\Question;
 
 class QuestionAnswer extends Model
 {
@@ -13,18 +15,23 @@ class QuestionAnswer extends Model
     protected $fillable = ['question_id', 'answer_id', 'correct'];
 
 
-    public function is_correct(Request $request)
-    {
-        $questionsAnswers = $request;
 
-        foreach($questionsAnswers as $question)
+    public static function is_correct($questionID, $answerID)
+    {
+
+        $questionsWithAnswers = QuestionAnswer::where('questions_id', $questionID)->where('correct', '=', '1')->first();
+        if($questionsWithAnswers->answer_id == $answerID)
         {
-           if($question->correct == 1)
-           {
-               return true;
-           }
+            return 'green';
         }
 
-        return false;
+        return 'red';
+    }
+
+
+    public function answers()
+    {
+        return $this->belongsTo(Question::class);
+
     }
 }

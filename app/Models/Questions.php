@@ -5,13 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Questions extends Model
 {
     use HasFactory;
 
     protected $fillable = ['question'];
 
-    public function question(){
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
+
+    public function questionAnswer(){
         return $this->hasMany(QuestionAnswer::class);
     }
 }

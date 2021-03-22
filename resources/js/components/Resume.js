@@ -8,7 +8,7 @@ function Resume() {
         <div className="row justify-content-center">
             <div className="col-md-12">
                 <div className="card">
-                    <div className="card-header">Learn more about Russell Hudson <button>Take A Quiz</button></div>
+                    <div className="card-header">Learn more about Russell Hudson</div>
                 </div>
 
                 <div className="card-body" id="quiz-body">

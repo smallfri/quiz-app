@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('questions', [\App\Http\Controllers\QuestionController::class, 'index']);
+Route::get('questions/{id}', [\App\Http\Controllers\QuestionController::class, 'show']);
+Route::post('questions/{questionId}/answer/{answerId}', [\App\Http\Controllers\QuestionController::class, 'handleMarkUserChoice']);
+

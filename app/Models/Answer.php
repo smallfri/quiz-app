@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\Console\Question\Question;
 
 class Answer extends Model
 {
@@ -11,7 +12,8 @@ class Answer extends Model
 
     use HasFactory;
 
-    public function answer(){
+    public function answer()
+    {
         return $this->belongsTo(Question::class);
     }
 }

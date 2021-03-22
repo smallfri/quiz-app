@@ -16,5 +16,6 @@ require('./components/App')
 require('./components/Resume');
 require('./components/QuestionsList');
 require('./components/Quizlet');
+require('./components/SingleQuestion');
 
 

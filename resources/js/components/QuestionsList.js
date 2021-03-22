@@ -12,6 +12,7 @@ class QuestionsList extends Component {
 
     componentDidMount () {
         axios.get('api/questions').then(response => {
+            console.log(response.data);
             this.setState({
                 questions: response.data
             })
@@ -27,14 +28,14 @@ class QuestionsList extends Component {
                         <div className='card'>
                             <div className='card-header'>All questions</div>
                             <div className='card-body'>
-                                <Link className='btn btn-primary btn-sm mb-3' to='/create'>
-                                    Create new question
-                                </Link>
+                                {/*<Link className='btn btn-primary btn-sm mb-3' to='/create'>*/}
+                                {/*    Create new question*/}
+                                {/*</Link>*/}
                                 <ul className='list-group list-group-flush'>
                                     {questions.map(question => (
                                         <Link
                                             className='list-group-item list-group-item-action d-flex justify-content-between align-items-center'
-                                            to={`/${question.id}`}
+                                            to={`/questions/${question.id}`}
                                             key={question.id}
                                         >
                                             {question.question}
