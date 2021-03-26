@@ -1,3 +1,5 @@
+//renders the questions list
+
 import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -12,7 +14,7 @@ class QuestionsList extends Component {
 
     componentDidMount () {
         axios.get('api/questions').then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             this.setState({
                 questions: response.data
             })
@@ -28,9 +30,6 @@ class QuestionsList extends Component {
                         <div className='card'>
                             <div className='card-header'>All questions</div>
                             <div className='card-body'>
-                                {/*<Link className='btn btn-primary btn-sm mb-3' to='/create'>*/}
-                                {/*    Create new question*/}
-                                {/*</Link>*/}
                                 <ul className='list-group list-group-flush'>
                                     {questions.map(question => (
                                         <Link

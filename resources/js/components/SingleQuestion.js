@@ -1,3 +1,5 @@
+//displays a single question with it's possible answers
+
 import axios from 'axios'
 import React, { Component } from 'react'
 
@@ -10,13 +12,9 @@ class SingleQuestion extends Component {
             selectedPost: {},
             bgColor: ""
         }
-        // this.hancdleMarkAsCorrectAnswer = this.handleMarkAsCorrectAnswer.bind(this)
     }
 
     handleMarkAsCorrectAnswer (answerID) {
-        // console.log('Answers:'+this.answers);
-        // console.log('Props:'+this.props);
-        // const { history } = this.props
         axios.post(`/api/questions/${this.state.question.id}/answer/`+answerID)
             .then((response) => {
                 console.log(response.data);

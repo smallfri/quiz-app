@@ -1,5 +1,6 @@
 {
-    "private": true,
+    "homepage": "http://russell-hudson.com",
+    "private",: true,
     "scripts": {
         "dev": "npm run development",
         "development": "mix",

@@ -1,5 +1,6 @@
+//renders the resume
+
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function Resume() {
 
@@ -21,7 +22,3 @@ function Resume() {
 }
 
 export default Resume;
-
-// if (document.getElementById('resume')) {
-//     ReactDOM.render(<Resume/>, document.getElementById('resume'));
-// }

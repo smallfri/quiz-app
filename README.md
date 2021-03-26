@@ -1,12 +1,32 @@
+#The Assignment
+Summary of coding assignment:
 
-#Installation
+- Create a quiz
+- Make it about anything you want
+- Use examples of our target technology (PHP/Laravel/SQL) stack that best represent your skills. (Be sure to use Laravel as they have passed on people who presented good quiz samples but did not use Laravel)
+
+ 
+Expected outcome:
+
+- Link to Git repository
+- Link to working Quiz
+
+
+##Working Example
+
+https://www.russell-hudson.com
+
+##Installation
 
 This application uses or php artisan serve or
 Laravel sail - https://laravel.com/docs/8.x/sail
 
 Rather than run migrations, there is a copy of the db in the root folder named quizzapp.gz
 
-The Front End is in react, simply because I wanted more practice with React. I know the Laravel purist will have my head for not using vue, but laravel does make it easy to use other JS framworks now :)
+The Front End is in react, simply because I wanted more practice with React. I know the Laravel purist will have my head for not using vue, but laravel does make it easy to use other JS frameworks now :)
+
+
+
 
 
 
